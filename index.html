@@ -1,0 +1,97 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title></title>
+
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+
+
+        <link rel="manifest" href="site.webmanifest">
+        <link rel="apple-touch-icon" href="icon.png">
+        <!-- Place favicon.ico in the root directory -->
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/bootstrap-grid.css">
+        <link rel="stylesheet" href="css/bootstrap-reboot.css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+        <link src='style.css' rel='stylesheet'>
+        <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Ruslan+Display" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+
+    	<script src='https://maps.googleapis.com/maps/api/js' type="text/javascript"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+        <table id=all>
+			<tr><td colspan=3 id='top'>
+			<h1></h1>
+			<div id='menu'></div>
+			</td></tr>
+			<tr>
+			<td id='left'></td>
+			<td id='center'></td>
+			<td id='right'></td>
+			</tr>
+            <div class="btn-group btn-group-justified">
+			<button id="stronaglowna" class="btn btn-success">Strona Glowna</button>
+			<button id="personel" class="btn btn-success">News</button>
+			<button id="czat" class="btn btn-success">Czat</button>
+			<button id="galleria" class="btn btn-success">Galeria</button>
+			<button id="onas" class="btn btn-success">O nas </button>
+            </div>
+			<tr><td id="bottom" colspan=3></td></tr>
+		</table>
+
+        <script src="js/vendor/modernizr-3.5.0.min.js"></script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/bootstrap.js"></script>
+
+        <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+        <script>
+            window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
+            ga('create','UA-XXXXX-Y','auto');ga('send','pageview')
+        </script>
+        <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+    </body>
+	<script>
+	$(window).on("hashchange",function(){
+		$("#center").load(location.hash.substr(1));
+	}); 
+	$("#left").load("kalendarz.php");
+	$("#right").load("adres.php");
+	$("#bottom").load("stopka.php");
+	$("#center").load("stronaglowna.php");
+	$("#stronaglowna").click(function(){
+		$("#center").load("stronaglowna.php");
+	});
+	$("#personel").click(function(){
+		$("#center").load("personel.php");
+	});  	
+	$("#zadpac").click(function(){
+		$("#center").load("zadpac.php");
+	}); 
+	$("#czat").click(function(){
+		$("#center").load("czat.php");
+	}); 
+	$("#galleria").click(function(){
+		$("#center").load("galleria.php");
+	});
+	$("#onas").click(function(){
+		$("#center").load("onas.php");
+	});  	
+</script>
+</html>
